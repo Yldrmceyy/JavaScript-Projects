@@ -48,58 +48,66 @@
     </div>
 
     <script>
-        // OpenWeatherMap API anahtarı ve URL'si
-        const apiKey = "7003385d1be9436097474c1d3a7a98d3";
-        const apiUrl =
-          "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
-  
-        // DOM elemanlarını seç
-        const searchBox = document.querySelector(".search input");
-        const searchBtn = document.querySelector(".search button");
-        const weatherIcon = document.querySelector(".weather-icon");
-  
-        // Hava durumunu kontrol etme fonksiyonu
-        async function checkWeather(city) {
-          const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
-          
-          // Geçersiz şehir adı durumunda hata mesajını göster
-          if (response.status == 404) {
-            document.querySelector(".error").style.display = "block";
-            document.querySelector(".weather").style.display = "none";
-          } else {
-            // API'den gelen veriyi işleyin
-            var data = await response.json();
-  
-            // Şehir adı ve hava durumu bilgilerini güncelle
-            document.querySelector(".city").innerHTML = data.name;
-            document.querySelector(".temp").innerHTML =
-              Math.round(data.main.temp) + " °C";
-            document.querySelector(".humidity").innerHTML =
-              data.main.humidity + " %";
-            document.querySelector(".wind").innerHTML = data.wind.speed + " km/h";
-  
-            // Hava durumu simgesini güncelle
-            if (data.weather[0].main == "Clouds") {
-              weatherIcon.src = "./images/clouds.png";
-            } else if (data.weather[0].main == "Clear") {
-              weatherIcon.src = "./images/clear.png";
-            } else if (data.weather[0].main == "Rain") {
-              weatherIcon.src = "./images/rain.png";
-            } else if (data.weather[0].main == "Drizzle") {
-              weatherIcon.src = "./images/drizzle.png";
-            } else if (data.weather[0].main == "Mist") {
-              weatherIcon.src = "./images/mist.png";
-            }
-            // Hata mesajını gizle ve hava durumu bilgilerini göster
-            document.querySelector(".error").style.display = "none";
-            document.querySelector(".weather").style.display = "block";
+      // OpenWeatherMap API anahtarı ve URL'si
+      const apiKey = "7003385d1be9436097474c1d3a7a98d3";
+      const apiUrl =
+        "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
+
+      // DOM elemanlarını seç
+      const searchBox = document.querySelector(".search input");
+      const searchBtn = document.querySelector(".search button");
+      const weatherIcon = document.querySelector(".weather-icon");
+
+      // Hava durumunu kontrol etme fonksiyonu
+      async function checkWeather(city) {
+        const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
+
+        // Geçersiz şehir adı durumunda hata mesajını göster
+        if (response.status == 404) {
+          document.querySelector(".error").style.display = "block";
+          document.querySelector(".weather").style.display = "none";
+        } else {
+          // API'den gelen veriyi işleyin
+          var data = await response.json();
+
+          // Şehir adı ve hava durumu bilgilerini güncelle
+          document.querySelector(".city").innerHTML = data.name;
+          document.querySelector(".temp").innerHTML =
+            Math.round(data.main.temp) + " °C";
+          document.querySelector(".humidity").innerHTML =
+            data.main.humidity + " %";
+          document.querySelector(".wind").innerHTML = data.wind.speed + " km/h";
+
+          // Hava durumu simgesini güncelle
+          if (data.weather[0].main == "Clouds") {
+            weatherIcon.src = "./images/clouds.png";
+          } else if (data.weather[0].main == "Clear") {
+            weatherIcon.src = "./images/clear.png";
+          } else if (data.weather[0].main == "Rain") {
+            weatherIcon.src = "./images/rain.png";
+          } else if (data.weather[0].main == "Drizzle") {
+            weatherIcon.src = "./images/drizzle.png";
+          } else if (data.weather[0].main == "Mist") {
+            weatherIcon.src = "./images/mist.png";
           }
+          // Hata mesajını gizle ve hava durumu bilgilerini göster
+          document.querySelector(".error").style.display = "none";
+          document.querySelector(".weather").style.display = "block";
         }
-  
-        // Arama butonuna tıklama olayı
-        searchBtn.addEventListener("click", () => {
+      }
+
+      // Arama butonuna tıklama olayı
+      searchBtn.addEventListener("click", () => {
+        checkWeather(searchBox.value);
+      });
+
+      //keypress olayı için event listener:
+      searchBox.addEventListener("keypress", (e) => {
+       
+        if (e.key === "Enter") {
           checkWeather(searchBox.value);
-        });
-      </script>
+        }
+      });
+    </script>
   </body>
 </html>
