@@ -2,7 +2,11 @@
 
 WeatherApp is a responsive web application that provides real-time weather information for any city or country using the OpenWeatherMap API. This application allows users to easily access current weather conditions, including temperature, humidity, wind speed, and more.
 
-![Example Screenshot](./ss.gif)
+You can try the live demo of the Weather App project [here](https://weather-js-appp.netlify.app/).
+
+
+
+![Example Screenshot](/WeatherApp/ss.jpg)
 
 ## Features
 
