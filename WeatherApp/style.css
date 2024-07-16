@@ -12,7 +12,7 @@ body {
   max-width: 470px;
   background: linear-gradient(135deg, #00feba, #5b548a);
   color: #fff;
-  margin: 100px auto;
+  margin: 20px auto;
   border-radius: 20px;
   padding: 40px 35px;
   text-align: center;
@@ -94,4 +94,16 @@ body {
   margin-top: 10px;
   font-size: 14px;
   display: none;
+}
+
+h3{
+
+    background: linear-gradient(135deg, #00feba, #5b548a, #00feba, orange);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+    text-align:center;
+    padding:20px ;
+    margin: 20px;
+    font-size:50px;
+    justify-content: space-between;
 }
