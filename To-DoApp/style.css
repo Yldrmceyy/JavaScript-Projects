@@ -110,8 +110,6 @@ ul li span:hover {
   background-color: #edeef0;
 }
 
-
-
 /*Medya Sorguları */
 @media (max-width: 768px) {
   .todo-app {
