@@ -109,3 +109,49 @@ ul li span {
 ul li span:hover {
   background-color: #edeef0;
 }
+
+
+
+/*Medya Sorguları */
+@media (max-width: 768px) {
+  .todo-app {
+    margin: 50px auto;
+    padding: 30px 20px 50px;
+  }
+
+  button {
+    padding: 12px 30px;
+    font-size: 14px;
+  }
+
+  ul li {
+    font-size: 15px;
+    padding: 10px 6px 10px 40px;
+  }
+
+  ul li span {
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .todo-app h2 {
+    font-size: 18px;
+  }
+
+  input {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  button {
+    padding: 10px 20px;
+    font-size: 12px;
+  }
+
+  ul li {
+    font-size: 14px;
+  }
+}
