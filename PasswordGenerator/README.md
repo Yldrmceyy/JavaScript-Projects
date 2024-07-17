@@ -2,6 +2,8 @@
 
 A simple web application that generates a random password with a mix of uppercase letters, lowercase letters, numbers, and symbols.
 
+You can try the live demo of the Random Password Generator project [here](https://random-passwordgenerate.netlify.app/).
+ 
 ![Password Generator Screenshot](./ss.jpg)
 
 ## Features
