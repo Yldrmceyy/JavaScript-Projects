@@ -1,7 +1,7 @@
 const questions = [
   {
     question: "Which is the largest animal in the world?",
-    answer: [
+    answers: [
       { text: "Shark", correct: false },
       { text: "Blue Whale", correct: true },
       { text: "Elephant", correct: false },
@@ -10,7 +10,7 @@ const questions = [
   },
   {
     question: "What is the chemical symbol for gold?",
-    answer: [
+    answers: [
       { text: "Ag", correct: false },
       { text: "Au", correct: true },
       { text: "Pb", correct: false },
@@ -19,7 +19,7 @@ const questions = [
   },
   {
     question: "Which is the largest planet in the solar system?",
-    answer: [
+    answers: [
       { text: "Jupiter", correct: true },
       { text: "Saturn", correct: false },
       { text: "Earth", correct: false },
@@ -28,7 +28,7 @@ const questions = [
   },
   {
     question: "Who painted the Mona Lisa?",
-    answer: [
+    answers: [
       { text: "Vincent Van Gogh", correct: false },
       { text: "Leonardo da Vinci", correct: true },
       { text: "Pablo Picasso", correct: false },
@@ -37,7 +37,7 @@ const questions = [
   },
   {
     question: "What is the capital city of Australia?",
-    answer: [
+    answers: [
       { text: "Sydney", correct: false },
       { text: "Melbourne", correct: false },
       { text: "Canberra", correct: true },
@@ -47,7 +47,7 @@ const questions = [
 
   {
     question: "Which language is the most spoken worldwide?",
-    answer: [
+    answers: [
       { text: "English", correct: false },
       { text: "Spanish", correct: false },
       { text: "Mandarin Chinese", correct: true },
@@ -56,7 +56,7 @@ const questions = [
   },
   {
     question: "Which ocean is the largest?",
-    answer: [
+    answers: [
       { text: "Atlantic Ocean", correct: false },
       { text: "Indian Ocean", correct: false },
       { text: "Arctic Ocean", correct: false },
@@ -65,16 +65,41 @@ const questions = [
   },
 ];
 
-const questionEl=document.getElementById("question");
-const answerButton=document.getElementById("answer-buttons");
-const nextButton=document.getElementById("next-btn");
+const questionEl = document.getElementById("question");
+const answerButtons = document.getElementById("answer-buttons");
+const nextButton = document.getElementById("next-btn");
 
-let currentQuestionIndex=0;
-let score=0;
+let currentQuestionIndex = 0;
+let score = 0;
 
-function startQuiz(){
-    currentQuestionIndex=0;
-    score=0;
-    nextButton.innerHTML=   "Next";
-    showQuestion();
+function startQuiz() {
+  currentQuestionIndex = 0;
+  score = 0;
+  nextButton.innerHTML = "Next";
+  showQuestion();
 }
+//answerButton.innerHTML = " ";  önceki cevapları temizler bir diğer yöntem reserState();
+
+function showQuestion() {
+  resetState();
+  let currentQuestion = questions[currentQuestionIndex];
+  let questionNo = currentQuestionIndex + 1;
+  questionEl.innerHTML = questionNo + ". " + currentQuestion.question;
+
+  currentQuestion.answers.forEach((answer) => {
+    const button = document.createElement("button");
+    button.innerHTML = answer.text;
+    button.classList.add("btn");
+    answerButtons.appendChild(button);
+
+  });
+}
+
+function resetState() {
+  nextButton.style.display = "none";
+  while (answerButtons.firstChild) {
+    answerButtons.removeChild(answerButtons.firstChild);
+  }
+}
+
+startQuiz();
