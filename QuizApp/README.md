@@ -3,10 +3,10 @@
 This is a simple quiz application built with HTML, CSS, and JavaScript. The quiz consists of multiple-choice questions, and users can select their answers to see their score at the end.
 
 
-You can try the live demo of the Quiz App project [here](/).
+You can try the live demo of the Quiz App project [here](https://simple-quizzz.netlify.app/).
 
 
-![Example Screenshot](.jpg)
+![Example Screenshot](ss.jpg)
 
 ## Features
 
