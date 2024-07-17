@@ -15,7 +15,7 @@
       <h1>Generate a <br /><span>Random Password </span></h1>
       <div class="display">
         <input type="text" id="password" placeholder="Password" />
-        <img src="./images/copy.png" alt="" />
+        <img src="./images/copy.png" onclick="copyPassword()" alt="" />
       </div>
       <button onclick="createPassword()">
         <img src="./images/generate.png" alt="" />Generate Password
@@ -44,6 +44,14 @@
         }
         // Set the generated password in the input
         PasswordBox.value = password;
+      }
+
+
+//Copies the specified text to the clipboard.
+      function copyPassword(){
+        PasswordBox.select();
+        document.execCommand("copy");
+
       }
     </script>
   </body>
