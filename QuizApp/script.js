@@ -121,7 +121,7 @@ function selectAnswer(e) {
     }
     button.disabled = true; //buton devre dışı 
   });
-
+  nextButton.style.display = "block";
 }
 
 startQuiz();
