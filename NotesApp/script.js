@@ -18,3 +18,9 @@ createBtn.addEventListener("click", () => {
   });
 });
 
+/*Added alternative method for deleting notes by handling click events directly on notesContainer
+notesContainer.addEventListener("click", function(e){
+    if(e.target.tagName==="IMG"){
+        e.target.parentElement.remove();
+    }
+})*/
