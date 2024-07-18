@@ -45,9 +45,12 @@ notesContainer.addEventListener("click", function (e) {
   }
 });
 
+//// Add an event listener to handle the Enter key press in contenteditable elements
 document.addEventListener("keydown", (event) => {
   if (event.key === "Enter") {
+     // Insert a line break instead of a new paragraph
     document.execCommand("insertLineBreak");
+     // Prevent the default behavior of the Enter key
     event.preventDefault();
   }
 });
