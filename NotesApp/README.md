@@ -4,11 +4,10 @@
 
 The Notes App is a simple application for creating, editing, and managing notes. It provides a user-friendly interface for adding and deleting notes, which are stored in `localStorage` for persistence. This project demonstrates the use of JavaScript to manipulate the DOM, handle events, and manage browser storage.
 
+You can try the live demo of the Notes App project [here](https://notes-appp-js.netlify.app/).
 
-You can try the live demo of the Quiz App project [here](https://simple-quizzz.netlify.app/).
+![Example Gif](./notesApp.gif)
 
-
-![Example Screenshot](./notesApp.gif.jpg)
 ## Features
 
 - **Create Notes:** Click the "Create Notes" button to add a new note.
