@@ -4,14 +4,14 @@ const createBtn = document.querySelector(".btn");
 let notes = document.querySelector(".input-box");
 
 //localStorage'dan notları yükler.
-function showNotes(){
-    notesContainer.innerHTML = localStorage.getItem("notes");
+function showNotes() {
+  notesContainer.innerHTML = localStorage.getItem("notes");
 }
 showNotes();
 
 //localStorage'a notları kaydeder.
-function updateStorage(){
-    localStorage.setItem("notes", notesContainer.innerHTML);
+function updateStorage() {
+  localStorage.setItem("notes", notesContainer.innerHTML);
 }
 
 // Add click event to "Create Notes" button
@@ -31,16 +31,23 @@ createBtn.addEventListener("click", () => {
 });
 
 //Added alternative method for deleting notes by handling click events directly on notesContainer
-notesContainer.addEventListener("click", function(e){
-    if(e.target.tagName==="IMG"){
-        e.target.parentElement.remove();
+notesContainer.addEventListener("click", function (e) {
+  if (e.target.tagName === "IMG") {
+    e.target.parentElement.remove();
+    updateStorage();
+  } else if (e.target.tagName === "P") {
+    notes = document.querySelectorAll(".input-box");
+    notes.forEach((note) => {
+      note.onkeyup = function () {
         updateStorage();
-    }else if(e.target.tagName==="P"){
-        notes=document.querySelectorAll(".input-box");
-        notes.forEach(note => {
-            note.onkeyup = function(){
-                updateStorage();
-            }
-        })
-    }
-})
+      };
+    });
+  }
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    document.execCommand("insertLineBreak");
+    event.preventDefault();
+  }
+});
