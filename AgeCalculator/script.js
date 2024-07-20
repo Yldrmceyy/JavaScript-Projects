@@ -42,9 +42,10 @@ function calculateAge() {
     // Output the result
     console.log(y3, m3, d3);
   }
+ 
   
+ 
   // Helper function to get the number of days in a month
   function getDaysInMonth(year, month) {
     return new Date(year, month, 0).getDate();
   }
-  
