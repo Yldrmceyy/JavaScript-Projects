@@ -2,6 +2,9 @@
 
 This project is a simple and interactive Age Calculator built with HTML, CSS, and JavaScript. The application allows users to input their birth date and calculates their precise age in years, months, and days.
 
+You can try the live demo of the Age Calculator project [here](https://age-calculatorr-js.netlify.app/).
+
+![Example Screenshot](./ss.jpg)
 
 ## Technologies Used
 
